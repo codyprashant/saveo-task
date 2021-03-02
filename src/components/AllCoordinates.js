@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import MapConfig from './MapConfig'
 
-export default function AllCoordinates({coords}) {
+export default function AllCoordinates({coords, setshowRoute, showRoute}) {
 
-    const [showRoute, setshowRoute] = useState(false)
+    
     const [routes, setRoutes] = useState([])
     function showRouteLine(){
         if(coords.length > 1){
