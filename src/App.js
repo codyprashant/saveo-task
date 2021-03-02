@@ -5,7 +5,8 @@ import AllCoordinates from './components/AllCoordinates'
 
 function App() {
   const [submitData, setSubmitData] = useState([]);
-  const [showRoute, setshowRoute] = useState(false)
+  const [showRoute, setshowRoute] = useState(false);
+  const [center, setCenter] = useState({ lat: 23.84, lng: 77.70 });
  
   function onSubmit(location, latitude, longitude){
     if(location && latitude && longitude){
@@ -15,6 +16,7 @@ function App() {
           longitude
         }
         setSubmitData([...submitData, entry])
+        setCenter({ lat: parseFloat(latitude), lng: parseFloat(longitude) })
     }
   }
   function resetState(){
@@ -52,7 +54,7 @@ function App() {
           }}
         >
           <InputForm onSubmit={onSubmit} />
-          <AllCoordinates coords ={submitData} setshowRoute ={setshowRoute} showRoute={showRoute}/>
+          <AllCoordinates coords ={submitData} setshowRoute ={setshowRoute} showRoute={showRoute} center={center}/>
         </div>
       </header>
     </div>

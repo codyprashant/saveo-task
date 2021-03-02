@@ -5,15 +5,11 @@ const containerStyle = {
     width: '100%',
     height: '480px'
   };
-const center = {
-    lat: 23.84,
-    lng: 77.70
-};
-function MapConfig({locations, showRoute, routes}) {
+
+function MapConfig({locations, showRoute, routes, center}) {
     const { isLoaded } = useJsApiLoader({ id: 'google-map-script', googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY})
     // eslint-disable-next-line
     const [map, setMap] = React.useState(null)
-
 
     const onLoad = React.useCallback(function callback(map) {
       const bounds = new window.google.maps.LatLngBounds();

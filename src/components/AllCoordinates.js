@@ -1,10 +1,11 @@
 import React, {useState} from 'react'
 import MapConfig from './MapConfig'
 
-export default function AllCoordinates({coords, setshowRoute, showRoute}) {
+export default function AllCoordinates({coords, setshowRoute, showRoute, center}) {
 
     
     const [routes, setRoutes] = useState([])
+
     function showRouteLine(){
         if(coords.length > 1){
             let temp =[];
@@ -75,7 +76,7 @@ export default function AllCoordinates({coords, setshowRoute, showRoute}) {
                   </div>
                 </div>
                 <div className="col">
-                    <MapConfig locations={coords} showRoute={showRoute} routes={routes}/>
+                    <MapConfig locations={coords} showRoute={showRoute} routes={routes} center={center}/>
                 </div>
               </div>
             </div>
