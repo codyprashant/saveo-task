@@ -11,6 +11,7 @@ const center = {
 };
 function MapConfig({locations, showRoute, routes}) {
     const { isLoaded } = useJsApiLoader({ id: 'google-map-script', googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY})
+    // eslint-disable-next-line
     const [map, setMap] = React.useState(null)
 
 
